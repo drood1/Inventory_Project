@@ -11,14 +11,4 @@ public class Item_Pickup : MonoBehaviour {
 			Destroy (this.gameObject);
 		}
 	}
-
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

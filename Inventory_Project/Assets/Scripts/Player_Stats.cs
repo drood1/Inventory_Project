@@ -15,22 +15,40 @@ public class Player_Stats : MonoBehaviour {
 	public float mana_regen = 7;
 
 
+	public Item_Database database;
+
 	//creates an array of 6 Item objects
 	//public float[Item] inventory = new float[6];
 
 
 	public void AddItem(int item_id)	{
-		/*
+		
 		//iterates through a database of items (item_list) and checks each item's ID in the database to the item_id that needs to be added
-		for(int i = 0; i < item_list.Count; i++)	{
+		for(int i = 0; i < database.item_list.Count; i++)	{
 			//once the proper item is found in the database, add that item's stats to this player
-			if(item_id == item_list[i].id)	{
+			if(item_id == database.item_list[i].id)	{
 				//add stats of item to the player
+				/*
+					STAT INDICES:
+					0: max health
+					1: health regen
+					2: max mana
+					3: mana regen
+					4: AP
+					5: AD
+				*/
+				max_hp += database.item_list [i].stats [0];
+				hp_regen += database.item_list [i].stats [1];
+				max_mana += database.item_list [i].stats [2];
+				mana_regen += database.item_list [i].stats [3];
+				AP += database.item_list [i].stats [4];
+				AD += database.item_list [i].stats [5];
 				//add the Item to the "inventory" array
 			}
 
 		}
-		*/
+
+		/*
 		//hacky version
 		if (item_id == 0) {
 			max_hp += 300;
@@ -44,6 +62,7 @@ public class Player_Stats : MonoBehaviour {
 			max_hp += 500;
 			hp_regen += 20;
 		}
+		*/
 	}
 
 
@@ -62,6 +81,8 @@ public class Player_Stats : MonoBehaviour {
 		current_mana = max_mana;
 		//decrease the 3rd parameter to increase the tick rate of regen
 		InvokeRepeating ("Regen", 0, 1f);	
+
+		database = GameObject.Find ("Database_obj").GetComponent<Item_Database> ();
 	}
 	
 	// Update is called once per frame
