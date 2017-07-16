@@ -60,7 +60,8 @@ public class Player_Stats : MonoBehaviour {
 	void Start () {
 		current_hp = max_hp;
 		current_mana = max_mana;
-		InvokeRepeating ("Regen", 0, 2f);	
+		//decrease the 3rd parameter to increase the tick rate of regen
+		InvokeRepeating ("Regen", 0, 1f);	
 	}
 	
 	// Update is called once per frame
