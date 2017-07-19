@@ -41,6 +41,11 @@ public class Item_Database : MonoBehaviour {
 		Game_Item derp = new Game_Item("derp", 0, 300, 0, 150, 0, 135, 10);
 		item_list.Add (derp);
 
+							//(name, id#, max_hp, hp_regen, max_mana, mana_regen, ap, ad)
+		Game_Item item1 = new Game_Item("item1", 1, 0, 25, 0, 30, 500, 0);
+		item_list.Add (item1);
+
+
 		Debug.Log("test");
 	}
 

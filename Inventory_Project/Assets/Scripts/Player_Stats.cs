@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Stats : MonoBehaviour {
 	public float max_hp = 100;
@@ -17,8 +18,11 @@ public class Player_Stats : MonoBehaviour {
 
 	public Item_Database database;
 
+	//public Image hp_bar;
+	//public Image mana_bar;
+
 	//creates an array of 6 Item objects
-	//public float[Item] inventory = new float[6];
+	//public float[Game_Item] inventory = new float[6];
 
 
 	public void AddItem(int item_id)	{
@@ -44,25 +48,10 @@ public class Player_Stats : MonoBehaviour {
 				AP += database.item_list [i].stats [4];
 				AD += database.item_list [i].stats [5];
 				//add the Item to the "inventory" array
+				//inventory.Add(database.item_list[i]);
 			}
 
 		}
-
-		/*
-		//hacky version
-		if (item_id == 0) {
-			max_hp += 300;
-			AP += 135;
-		} 
-		else if (item_id == 1) {
-			max_mana += 400;
-			mana_regen += 3;
-		} 
-		else if (item_id == 2) {
-			max_hp += 500;
-			hp_regen += 20;
-		}
-		*/
 	}
 
 
@@ -93,5 +82,7 @@ public class Player_Stats : MonoBehaviour {
 			current_mana -= 25;
 
 
+		//hp_bar.fillAmount = current_hp/max_hp;
+		//mana_bar.fillAmount = current_mana/max_mana;
 	}
 }
