@@ -22,7 +22,7 @@ public class Player_Stats : MonoBehaviour {
 	//public Image mana_bar;
 
 	//creates an array of 6 Item objects
-	//public float[Game_Item] inventory = new float[6];
+	//public float[database.Game_Item()] inventory = new float[6];
 
 
 	public void AddItem(int item_id)	{

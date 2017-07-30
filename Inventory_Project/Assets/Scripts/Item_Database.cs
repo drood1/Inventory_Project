@@ -45,6 +45,8 @@ public class Item_Database : MonoBehaviour {
 		Game_Item item1 = new Game_Item("item1", 1, 0, 25, 0, 30, 500, 0);
 		item_list.Add (item1);
 
+		Game_Item item2 = new Game_Item("item2", 2, 1000, 250, 0, 30, 500, 0);
+		item_list.Add (item2);
 
 		Debug.Log("test");
 	}
